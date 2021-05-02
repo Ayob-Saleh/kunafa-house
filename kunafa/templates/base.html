@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Kunafa House{% endblock %}</title>
+    <!-- loads the path to your static files -->
+    {% load static %}
+<!--<link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css"/>
+<link rel="stylesheet" type="text/css" href="{% static 'kunafa/style.css' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+			<!--
+			<div class="header">
+			<img class="header-img1" src="{% static 'kunafa/images/logo.jpg' %}" alt="logo" />
+			<a class="link-title" href="{% url 'home' %}">Kunafa House</a>
+			</div>
+			-->
+
+
+<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+		<!-- header -->
+			<div class="navbar-header navbar-left">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+					<a class="navbar-brand" href="{% url 'home' %}" >Kunafa House</a>
+			</div>
+		<!--Items -->
+			<div class="collapse navbar-collapse" id="topNavBar">
+				<ul class="nav navbar-nav navbar-left">
+					<li class="">
+						<a href="{% url 'about' %}">
+							<span class="glyphicon glyphicon" aria-hidden="true"></span>&nbsp;About us 
+						</a>
+					</li>
+					<li class="#">
+						<a href="{% url 'what' %}">
+							<span class="glyphicon glyphicon" aria-hidden="true"></span>&nbsp;What's Kunafa
+						</a>
+					</li>
+				</ul>
+
+			 	<ul class="nav navbar-nav navbar-right">
+					{% if user.is_authenticated %}
+				
+					<li class="">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<li>Welcome</li>&nbsp;, <li>&nbsp;{{user.username}}</li>
+					</li>
+					
+					<li class="">
+						<a href="accounts/logout">
+							<span class="glyphicon glyphicon-off right" aria-hidden="true"></span>&nbsp;Logout
+						</a>
+					</li>
+				
+					{% else %}
+					<li class="">
+						<a href="accounts/register">
+							<span class="glyphicon" aria-hidden="true"></span>&nbsp;Sign up
+						</a>
+					</li>
+					<li class="">
+						<a href="accounts/login">
+							<span class="glyphicon" aria-hidden="true"></span>&nbsp;Login
+						</a>
+						{% endif %}
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="#">
+						<a href="{% url 'contact' %}">
+							<span class="glyphicon glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;Contact us
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+
+	<div class="bg"></div>
+
+
+
+
+	<footer>
+	&copy; 2021 Kunafa House&nbsp; developed by <a href="https://mail.google.com/mail/ayobbensaleh">Ayob Saleh</a>
+	</footer>
+
+</body>
+{% block body %}
+{% endblock %}
+
+
+</html>

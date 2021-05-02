@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div id="contact-page">
+		
+		
+		<h2 id="page-heading">Contact Us</h2>
+
+		<article class="details">
+
+			<h3>Kunafa House</h3>
+			<h5>Mojo Market, 30 Regent Rd, Sea Point, Cape Town</h5>
+			<br>
+
+			<h5>Tel : 0815241927</h5>
+			<h5>Email : ayobbensaleh@gmail.com</h5>
+			
+		</article>
+					
+			<div id="form">
+			<form method="POST" action="contact"></form>
+			{% csrf_token %}
+
+			<p>
+			<label for="name">Name:</label>
+			<input type="text" name="name" required>
+			</p>
+
+
+			<p>
+			<label for="email">Email:</label>
+			<input type="text" name="email" required>
+			</p>
+
+			<p>
+			<label for="number">Phone Number:</label>
+			<input type="tel" name="phone-number" required>
+			</p>
+
+			<p>			
+			<label for="subject">Subject:</label>
+			<input type="text" name="subject" required="" value="">
+			</p>
+
+			<p>
+			<label for="name">Message:</label>
+			<textarea name="message" id="" cols="30" rows="10"></textarea>
+			</p>
+
+			<p>
+			<input id="submit" type="submit" value="Send">	
+			</p>
+		</div>
+</div>
+
+{% endblock %}

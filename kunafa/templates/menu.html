@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<div id="index-page">
+<div class="wrapper">
+        <div class="title">
+            <h4><span>our menu</span>Made With Love</h4>
+        </div>
+        <div class="model-type">
+            		<p>Kunafa</p>
+        </div>
+            <div class="single-menu">
+            	
+            		{% for kun in Kunafa %}
+                		<img src="https://via.placeholder.com/250x250" alt="">
+               		 <div class="menu-content">
+                   		 <h4>{{kun.name}}<span> &nbsp; R{{kun.price}}</span></h4>
+                   		 <p>{{ kun.desc }}.</p>
+                	</div>
+                {% endfor %}
+            </div>
+            	<div class="model-type">
+            		<p>Baklava</p>
+            	</div>
+            	<br>
+            	<br>
+            <div class="single-menu">
+            		{% for bak in Baklawa %}
+            	
+                <img src="https://via.placeholder.com/250x200" alt="">
+                <div class="menu-content">
+                       <h4>{{bak.name}}<span> &nbsp; R{{bak.price}}</span></h4>
+                    <p>{{ bak.desc }}.</p>
+                </div>
+                {% endfor %}
+            </div>
+           	<div class="model-type">
+            		<p>Crunchy Kunafa</p>
+            	</div>
+            <div class="single-menu"> 
+            	{% for crun in Crunchy_kunafa %}
+                <img src="https://via.placeholder.com/250x200" alt="">
+                <div class="menu-content">
+                   <h4>{{crun.name}}<span> &nbsp; R{{crun.price}}</span></h4>
+                    <p>{{ crun.desc }}.</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="model-type">
+            		<p>Topping</p>
+            	</div>
+            <div class="single-menu">
+            	{% for top in Topping %}
+                <img src="https://via.placeholder.com/250x200" alt="">
+                <div class="menu-content">
+                   <h4>{{top.name}}<span> &nbsp; R{{top.price}}</span></h4>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<div class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+			{% for kun in Kunafa %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="https://via.placeholder.com/250x200" alt="card image cap">
+						<div class="card-body">
+							<h4 class=""><a href="{{ core.get_absolute_url }}">{{ kun.name }}</a> &nbsp; R {{ kun.price }} </h4>
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<div class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+			{% for bak in Baklawa %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="https://via.placeholder.com/250x200" alt="card image cap">
+						<div class="card-body">
+							<h4 class=""><a href="{{ core.get_absolute_url }}">{{ bak.name }}</a> &nbsp; R {{ bak.price }} </h4>
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<div class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+			{% for crun in Crunchy_kunafa %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="https://via.placeholder.com/250x200" alt="card image cap">
+						<div class="card-body">
+							<h4 class=""><a href="{{ core.get_absolute_url }}">{{ crun.name }}</a> &nbsp; R {{ crun.price }} </h4>
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<div class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+			{% for top in Topping %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="https://via.placeholder.com/250x200" alt="card image cap">
+						<div class="card-body">
+							<h4 class=""><a href="{{ core.get_absolute_url }}">{{ top.name }}</a> &nbsp; R {{ top.price }} </h4>
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div> -->
+
+{% endblock %}
