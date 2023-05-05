@@ -65,12 +65,12 @@
 				
 					{% else %}
 					<li class="">
-						<a href="accounts/register">
+						<a href="{% url 'register' %}">
 							<span class="glyphicon" aria-hidden="true"></span>&nbsp;Sign up
 						</a>
 					</li>
 					<li class="">
-						<a href="accounts/login">
+						<a href="{% url 'login' %}">
 							<span class="glyphicon" aria-hidden="true"></span>&nbsp;Login
 						</a>
 						{% endif %}
